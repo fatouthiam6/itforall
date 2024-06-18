@@ -1,0 +1,82 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/information/information.css' %}">
+{% endblock %}
+
+{% block content %}
+            <main>
+        <section>
+            <article id="total">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-side front">
+                            <img src="{% static 'css/information/images/adalovelace.png' %}"alt="goku" >
+                        </div>
+                        <div class="card-side back">
+                            <p>
+                                En 1843, <span>Ada Lovelace</span>, publia la première description d'une séquence d'opérations pour résoudre des problèmes mathématiques, devenant ainsi la première programmeuse d'ordinateurs. Elle anticipa également le potentiel des ordinateurs pour créer de la musique complexe, marquant ainsi la transition du calcul à la computation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-side front">
+                            <img src="{% static 'css/information/images/margeritehamilton.jpg' %}" alt="goku">
+                        </div>
+                        <div class="card-side back">
+                            <p>
+                                <span>Margaret Hamilton</span>, femme pionnière en informatique, a marqué l'histoire en dirigeant une équipe pour développer un logiciel crucial pour la NASA dans les années 1960. Elle a inventé le terme "ingénieur logiciel" pour son travail novateur et a concentré ses efforts sur la détection des erreurs système et la récupération d'informations en cas de panne d'ordinateur. Son approche rigoureuse du développement logiciel a été essentielle pour le succès de la mission Apollo 11.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-side front">
+                            <img src="{% static 'css/information/images/hedylamar.jpg' %}" alt="">
+                        </div>
+                        <div class="card-side back">
+                            <p>
+                                En 1942, <span>Hedy Lamarr</span> a inventé un système de communication secret pendant la Seconde Guerre mondiale, utilisant des fréquences radio pour créer un code inviolable, empêchant ainsi les nazis d'intercepter des messages classifiés. Leur technologie a ultérieurement contribué au développement des communications numériques, dont les téléphones mobiles et les télécopieurs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="cards">
+                    <div class="card">
+                        <div class="card-side front">
+                            <img src="{% static 'css/information/images/elizabethfeinler.CF032476.web_.jpg' %}" alt="">
+                        </div>
+                        <div class="card-side back">
+                            <p>
+                                Lorsque vous utilisez Internet ou achetez un domaine, pensez à <span>Elizabeth Feinler</span> , qui a joué un rôle clé dans la création de l'ARPANET, les premiers serveurs de pages jaunes et blanches, et les schémas de dénomination des domaines actuels.
+                            </p>
+                        </div>
+                    </div>
+                        <div class="card">
+                          <div class="card-side front">
+                            <img src="{% static 'css/information/images/joball.jpg' %}" alt="">
+                         </div>
+                            <div class="card-side back">
+                            <p>
+                                <span>Joan Ball</span>, pionnière en informatique, a lancé le St. James Computer Dating Service en Angleterre en 1964. En 1970, grâce à des améliorations technologiques, l'entreprise a pris son envol, permettant à ses 50 000 membres de définir leurs préférences avant de recevoir des correspondances compatibles. L'entreprise a connu un grand succès avec de nombreux mariages.
+
+                            </p>
+                        </div>
+                    </div>
+                        <div class="card">
+                            <div class="card-side front">
+                                <img src="{% static 'css/information/images/dubisky.jpg' %}" alt="">
+                            </div>
+                            <div class="card-side back">
+                                <p>
+                                    <span>Donna Dubinsky</span> est célèbre pour avoir introduit le premier assistant numérique personnel (PDA) au monde en 1992. Sous sa direction, Palm Computing a réussi à commercialiser le premier PDA avant ses concurrents, dominant ensuite un marché de plusieurs milliards de dollars avec plus de 70 % de part de marché. Actuellement, elle travaille sur le développement d'un système de mémoire informatique basé sur le cerveau humain.
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+{% endblock %}

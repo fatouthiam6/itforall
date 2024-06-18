@@ -1,0 +1,58 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% load appfilters %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/quiz/quiz.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="section-question">
+
+        <div class="question-presentation">
+            <h2>QUIZ</h2>
+            {% if score != null %}<h4 class="score">Vous avez obtenu un score de {{ score }} bonnes réponses</h4> {% endif %}
+        </div>
+
+        <form action="{% url 'question:results' %}" method="post" role="form">
+        {% csrf_token %}
+        {% for question in questions %}
+            <article class="question">
+            {% if question.id in true_answer %}
+                <div class="result result-true">Bonne réponse</div>
+            {% endif %}
+
+            {% if question.id not in true_answer %}
+                <div class="result result-false">Mauvaise réponse</div>
+            {% endif %}
+                <h3>{{ question.title }}</h3>
+                <img src="{% static 'yourapp/images/' %}{{ question.image_path }}" alt="">
+                <div class="reponses">
+
+                    <div class="reponse {% if score != null and question.correct_answer == question.a %}correct-answer{% endif %}{% if question.a in wrong_answer %}wrong-answer{% endif %}">
+                        <label for="input_{{ question.a }}">{{ question.a }}</label>
+                        <input id="input_{{ question.a }}" type="radio" name="{{ question.id }}" value="{{ question.a }}">
+                    </div>
+                    <div class="reponse {% if score != null and question.correct_answer == question.b %}correct-answer{% endif %}{% if question.b in wrong_answer %}wrong-answer{% endif %}">
+                        <label for="input_{{ question.b }}">{{ question.b }}</label>
+                        <input id="input_{{ question.b }}" type="radio" name="{{ question.id }}" value="{{ question.b }}">
+                    </div>
+                    <div class="reponse {% if score != null and question.correct_answer == question.c %}correct-answer{% endif %}{% if question.c in wrong_answer %}wrong-answer{% endif %}">
+                        <label for="input_{{ question.c }}">{{ question.c }}</label>
+                        <input id="input_{{ question.c }}" type="radio" name="{{ question.id }}" value="{{ question.c }}">
+                    </div>
+                    <div class="reponse {% if score != null and question.correct_answer == question.d %}correct-answer{% endif %}{% if question.d in wrong_answer %}wrong-answer{% endif %}">
+                        <label for="input_{{ question.d }}">{{ question.d }}</label>
+                        <input id="input_{{ question.d }}" type="radio" name="{{ question.id }}" value="{{ question.d }}">
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+            {% if score != null %}<h4 class="score">Vous avez obtenu un score de {{ score }} bonnes réponses</h4> {% endif %}
+            <div class="resultats-quiz">
+                <input type="submit" value="Passer aux résultats">
+            </div>
+        </form>
+
+    </section>
+{% endblock %}

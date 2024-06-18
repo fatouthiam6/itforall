@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    font-family: 'Nunito', sans-serif;
+}
+.top{
+    margin-left: 20px;
+}
+nav{
+    font-size: 25px;
+    display: flex;
+}
+header a {
+    text-decoration:none;
+    color: black;
+    margin: 30px;
+}
+header img{
+    width: 165px;
+}

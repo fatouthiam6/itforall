@@ -1,0 +1,61 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/accueil.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="presentation banniere">
+            <p>Bienvenue chez ItForAll, association dédiée à l'émancipation des femmes dans le monde de l'informatique. Chez ItForAll, nous croyons en un avenir où les talents, les compétences et les perspectives des femmes jouent un rôle central dans la création et l'innovation technologiques. Notre mission est claire : équilibrer la représentation des genres dans le secteur de l'informatique pour un monde plus diversifié, équitable et innovant. </p>
+        </div>
+        <div class="histoire banniere">
+            <div>
+                <h2>Notre histoire</h2>
+                <p>
+                    Fondée avec passion et détermination, ItForAll est née de la reconnaissance d'un déséquilibre flagrant dans le secteur de l'informatique.
+                    <br>Malgré des progrès significatifs, les femmes demeurent sous-représentées dans les métiers liés à la technologie. C'est pourquoi nous avons pris l'engagement de changer cette réalité. Depuis nos débuts, nous avons travaillé sans relâche pour créer un environnement où les femmes sont non seulement acceptées, mais également encouragées à exceller dans l'informatique.
+                </p>
+            </div>
+            <div>
+                <img src="https://media.discordapp.net/attachments/1153699790195019917/1154321042148442142/femmeinfo.jpg?width=641&height=562" alt="">
+            </div>
+        </div>
+        <div class="vision banniere">
+            <h2>Notre vision</h2>
+            <p>
+                Chez ItForAll, nous croyons que la diversité stimule l'innovation. Nous croyons que chaque femme a le potentiel de briller dans le monde de l'informatique, et c'est pourquoi nous nous efforçons de créer un écosystème inclusif où les femmes peuvent développer leurs compétences, se connecter avec des mentors et des pairs, et contribuer de manière significative à l'industrie technologique.
+            </p>
+        </div>
+            <div class="content">
+                <div class="illustration">
+                    <section class="image">
+                        <img id="photo" src="static/css/layout/images/imaesinf1.jpg" style="width: 150px; height: 100px;">
+                    </section>
+                    <section class="titre">
+                        <a class="button" href="{% url 'information:index' %}">Information</a>
+                    </section>
+                </div>
+                <div class="illustration2">
+                    <section class="titre2">
+                        <a class="button" href="{% url 'question:index' %}">Quiz</a>
+                    </section>
+                    <section class="image">
+                        <img src="static/css/layout/images/quizzimage.jpg" style="width: 150px; height: 100px;">
+                    </section>
+
+                </div>
+                <div class="illustration">
+                    <section class="image">
+                        <img src="static/css/layout/images/dev.jpg " style="width: 150px; height: 100px;">
+                    </section>
+                    <section class="titre">
+                        <a class="button" href="{% url 'exercise:index' %}">Exercices</a>
+                    </section>
+                </div>
+            </div>
+    </main>
+
+{% endblock %}

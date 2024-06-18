@@ -1,0 +1,47 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/exercise/exercise.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="exo-container">
+{#        <h2>Exercice de programmations basiques</h2>#}
+        <h3 class="exo-name green">// {{ exo.title }}</h3>
+{% if is_correct %}
+        <div class="alert-correct">
+            <h4>Bravo vous avez réussi l'exercice</h4>
+        </div>
+        {% elif is_correct == False %}
+        <div class="alert-wrong">
+            <h4>Dommage ce n'est pas la bonne réponse</h4>
+        </div>
+        {% endif %}
+        <div class="exo">
+            <pre class="code">
+                <span class="title">Code <br></span>
+                <code class="lang-js">{{ exo.code }}</code>
+            </pre>
+            <pre class="consignes">
+                <span class="title">Consignes</span>
+                <code class="lang-js"><span class="green">{{ exo.instructions }}</span>
+                </code>
+            </pre>
+        </div>
+        <form action="{% url "exercise:correct_exercise" exo.id %}" method="post" class="answer">
+            {% csrf_token %}
+            <input id="answer-input" type="number" name="answer" placeholder="Réponse">
+            <a class="next-exo" href="{% url 'exercise:show_exercise' next_id %}">Passer à l'exercice suivant</a>
+        </form>
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
+    <script src="{% static "/js/block-submit.js" %}"></script>
+{% endblock %}
